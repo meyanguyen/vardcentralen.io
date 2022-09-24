@@ -1,0 +1,198 @@
+<!DOCTYPE HTML>
+<!--
+	Industrious by TEMPLATED
+	templated.co @templatedco
+	Released for free under the Creative Commons Attribution 3.0 license (templated.co/license)
+-->
+<html>
+<html lang='se'>
+<?php
+session_start();
+	 
+echo $_SESSION["ErpID"];
+
+
+if(empty($_SESSION["ErpID"])){
+	header("location: logga_in.php");
+}
+?>
+	<head>
+		<title>Vårdcentralen Majorna - halsfluss</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<meta name="description" content="" />
+		<meta name="keywords" content="" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+	</head>
+	<body class="is-preload">
+
+		<!-- Header -->
+			<header id="header">
+				<a class="logo" href="startsida.html">Vårdcentralen Majorna</a>
+				<nav>
+					<a href="#menu">Meny</a>
+				</nav>
+			</header>
+
+		<!-- Nav -->
+			<nav id="menu">
+				<ul class="links">
+					<li><a href="startsida.html">Startssida<a></li>
+					<li><a href="inloggad.php">Mina sidor</a></li>
+					<li><a href="om_oss.html">Om oss</a></li>
+					<li><a href="kontakt.html">Kontakt</a></li>
+				</ul>
+			</nav>
+
+		<!-- Heading -->
+			<div id="heading" >
+				<h1>Halsfluss</h1>
+			</div>
+
+		<!-- Main -->
+			<section id="main" class="wrapper">
+				<div class="inner">
+					<div class="content">
+					<!-- Elements -->
+						<div class="row">
+							<div class="col-6 col-12-medium">
+								<!-- Form -->
+								<h3>Vad har du för symtom?</h3>
+								<form method="post" action="Valj_vardgivare.php" name="Halsfluss">
+									<div class="row gtr-uniform" style="width: 1000px;">
+									<!-- Break -->
+										<div class="col-12">
+										<p>Hur många veckor har du upplevt symtom?</p>
+											<select name="category" id="category">
+												<option value="">- Antal veckor -</option>
+												<option value="<1vecka">Mindre än 1 vecka</option>
+												<option value="1-2veckor">1-2 veckor</option>
+												<option value="3-4veckor">3-4 veckor</option>
+												<option value="längre">Längre</option>
+											</select>
+										</div>
+										<!-- Break -->
+										<p>Vilka symtom upplever du?</p>
+										<div class="col-6 col-12-small">
+											<input type="checkbox" id="Förkyld" name="checkbox">
+											<label for="Förkyld">Förkyld</label>
+										</div>
+										<div class="col-6 col-12-small">
+											<input type="checkbox" id="Ont-i-kroppen" name="checkbox" checked>
+											<label for="Ont-i-kroppen">Ont i kroppen</label>
+										</div>
+										<div class="col-6 col-12-small">
+											<input type="checkbox" id="Trötthet/matt" name="checkbox" checked>
+											<label for="Trötthet/matt">Trötthet/matt</label>
+										</div>
+										<div class="col-6 col-12-small">
+											<input type="checkbox" id="Röda-ömmande-ögon" name="checkbox" checked>
+											<label for="Röda-ömmande-ögon">Röda ömmande ögon</label>
+										</div>
+										<div class="col-6 col-12-small">
+											<input type="checkbox" id="Ont-i-halsen" name="checkbox" checked>
+											<label for="Ont-i-halsen">Ont i halsen</label>
+										</div>
+										<div class="col-6 col-12-small">
+											<input type="checkbox" id="Torrhosta" name="checkbox" checked>
+											<label for="Torrhosta">Torrhosta</label>
+										</div>
+										<div class="col-6 col-12-small">
+											<input type="checkbox" id="Ömmande-körtlar-i-käkvinkeln" name="checkbox" checked>
+											<label for="Ömmande-körtlar-i-käkvinkeln">Ömmande körtlar i käkvinkeln</label>
+										</div>
+										<div class="col-6 col-12-small">
+											<input type="checkbox" id="Vita-beläggningar-i-halsen/svalget" name="checkbox" checked>
+											<label for="Vita-beläggningar-i-halsen/svalget">Vita beläggningar i halsen/svalget</label>
+										</div>
+										<div class="col-6 col-12-small">
+											<input type="checkbox" id="Hosta" name="checkbox" checked>
+											<label for="Hosta">Hosta</label>
+										</div>
+										<!-- Break -->
+										<p>Har du behandlas med antibiotika under de senaste 2 månaderna?</p>
+										<div class="col-4 col-12-small">
+											<input type="radio" id="a-ja" name="a" checked>
+											<label for="a-ja">Ja</label>
+											<input type="radio" id="a-nej" name="a">
+											<label for="a-nej">Nej</label>
+										</div>
+										<p>Har du tagit febernedsättande läkemedel de senaste 4 timmarna?</p>
+										<div class="col-4 col-12-small">
+											<input type="radio" id="f-ja" name="f" checked>
+											<label for="f-ja">Ja</label>
+											<input type="radio" id="f-nej" name="f">
+											<label for="f-nej">Nej</label>
+										</div>
+										<p>Kan du öppna munnen som vanligt?</p>
+										<div class="col-4 col-12-small">
+											<input type="radio" id="ö-ja" name="ö" checked>
+											<label for="ö-ja">Ja</label>
+											<input type="radio" id="ö-nej" name="ö">
+											<label for="ö-nej">Nej</label>
+										</div>
+										<p>Har du någongång tidigare haft liknande besvär?</p>
+										<div class="col-4 col-12-small">
+											<input type="radio" id="b-ja" name="b" checked>
+											<label for="b-ja">Ja</label>
+											<input type="radio" id="b-nej" name="b">
+											<label for="b-nej">Nej</label>
+										</div>
+										<p>Tillhör du gruppen som rekommenderas att vaccineras mot influensa?</p>
+										<div class="col-4 col-12-small">
+											<input type="radio" id="v-ja" name="v" checked>
+											<label for="v-ja">Ja</label>
+											<input type="radio" id="v-nej" name="v">
+											<label for="v-nej">Nej</label>
+										</div>
+										<div class="col-12">
+										<p>Har du så pass svårt att svälja så att du inte klarar av att svälja eller få i dig vätska?</p>
+											<select name="category" id="category">
+												<option value="">- Val -</option>
+												<option value="Nej">Nej</option>
+												<option value="Nja">Nej, men det gör ont</option>
+												<option value="Ja">Ja, jag kan knappt svälja alls</option>
+											</select>
+										</div>										
+										<div class="col-12">
+												<input type="submit" value="Skicka och boka tid" class="primary"/>
+										</div>
+									</div>
+								</form>
+							</div>
+						</div>
+					</div>
+				</section>
+
+		<!-- Footer -->
+			<footer id="footer">
+				<div class="inner">
+					<div class="content">
+						<section>
+							<h3>Vårdcentralen Majorna</h3>
+							<p>Nunc lacinia ante nunc ac lobortis. Interdum adipiscing gravida odio porttitor sem non mi integer non faucibus ornare mi ut ante amet placerat aliquet. Volutpat eu sed ante lacinia sapien lorem accumsan varius montes viverra nibh in adipiscing. Lorem ipsum dolor vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing sed feugiat eu faucibus. Integer ac sed amet praesent. Nunc lacinia ante nunc ac gravida.</p>
+						</section>
+						<section>
+							<h4>Hittar du det du söker?</h4>
+							<ul class="alt">
+								<li><a href="#">Kontakt.</a></li>
+								<li><a href="#">Jobba med oss.</a></li>
+								<li><a href="#">Hitta till oss.</a></li>
+							</ul>
+						</section>
+					</div>
+					<div class="copyright">
+						&copy; Untitled. Photos <a href="https://unsplash.co">Unsplash</a>, Video <a href="https://coverr.co">Coverr</a>.
+					</div>
+				</div>
+			</footer>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>
